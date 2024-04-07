@@ -19,12 +19,17 @@ installButton.addEventListener('click', async () => {
   // Hide your custom install button
   installButton.hidden = true;
 
-  // Show the hidden browser prompt
-  deferredPrompt.prompt();
 
-  // Await user action on the prompt
+  if (deferredPrompt) {
+    deferredPrompt.prompt(); 
+      // Await user action on the prompt
   const choiceResult = await deferredPrompt.userChoice;
 
   // Log the outcome of the prompt for testing/debugging
   console.log(choiceResult.outcome); 
+  } else {
+    console.warn('deferredPrompt is not available for installation');
+    // Optionally, display a message to the user about PWA unavailability
+  }
 });
+  // Show the hidden browser prompt
