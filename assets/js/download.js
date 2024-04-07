@@ -1,6 +1,3 @@
- <script src="./assets/js/script.js"></script>
-
-    <scrip>
       // Get a reference to your custom install button (update the ID if needed)
 const installButton = document.getElementById('install-button'); 
 
@@ -31,4 +28,3 @@ installButton.addEventListener('click', async () => {
   // Log the outcome of the prompt for testing/debugging
   console.log(choiceResult.outcome); 
 });
-    </scrip>
